@@ -105,12 +105,12 @@ fluidRow(
 
 
 server <- function(input, output) {
+# get LaTeX to appear even after switching inputs
 output$cdf_eq <- renderUI({
   fluidRow(
     column(12, withMathJax(paste0(latex_formulae[[input$distribution]]$cdf)))
   )
 })
-
 output$pdf_eq <- renderUI({
   fluidRow(
     column(12, withMathJax(paste0(latex_formulae[[input$distribution]]$pdf)))
